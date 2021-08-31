@@ -37,7 +37,7 @@ foreach ($products as $key => $product) {
 $total = 0;
 $shopping = true;
 
-while($shopping){
+while ($shopping) {
     $chooseProduct = (readline("Please choose item from catalog (id): "));
     while (isset($products[$chooseProduct]) == false && is_numeric($chooseProduct)) {
         echo "Product not Found." . PHP_EOL;
@@ -56,12 +56,12 @@ while($shopping){
     $products[$chooseProduct]->amount -= $chooseAmount;
 
     $continueShopping = strtolower(readline("Do you want to continue shopping? [y,n]"));
-    while ($continueShopping !== "y" && $continueShopping !== "n"){
+    while ($continueShopping !== "y" && $continueShopping !== "n") {
         echo "Invalid input!!!" . PHP_EOL;
         $continueShopping = strtolower(readline("Do you want to continue shopping? [y,n]"));
     }
 
-    if ($continueShopping == "n"){
+    if ($continueShopping == "n") {
         $shopping = false;
     }
 }
@@ -72,7 +72,7 @@ foreach ($person->bag as $product) {
 
 echo $total / 100 . "$" . PHP_EOL;
 
-if ($person->cash >= $total){
+if ($person->cash >= $total) {
     echo "Your change is: " . ($person->cash - $total) / 100 . "$" . PHP_EOL;
 } else {
     echo "You don't have enough money" . PHP_EOL;
